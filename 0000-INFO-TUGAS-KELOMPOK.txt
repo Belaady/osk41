@@ -1,1 +1,273 @@
-hello
+####################################
+# REV03 Mon Jun 29 20:08:12 WIB 2020
+# REV02 Mon Jun 29 01:43:19 WIB 2020
+# START Mon Jun 22 00:01:58 WIB 2020
+# Berkas:
+#   "0000-INFO-TUGAS-KELOMPOK.txt"
+##############################################
+Petunjuk ini akan diperbaharui secara berkala!
+Harap cek tanggal/jam revisi di atas.
+##############################################
+
+
+***** INFO TUGAS KELOMPOK KELAS A, B, C, M *****
+
+BAGIAN A: ISTILAH
+=================
+1. "akunGitHub" -- Nama akun yang digunakan untuk mengakses GitHub.com.
+== PERHATIAN: Sebelumnya, pernah menggunakan istilah "GitHubUser".
+
+2. "PRIBADI"    -- Proyek OS201 pribadi, yaitu 
+== == https://github.com/akunGitHun/os201/
+== a. "UAS-PRIBADI/" -- Folder "UAS/" dalam "PRIBADI".
+== b. "UAS-PRIBADI/.dummy" -- Berkas "UAS/.dummy" dalam "PRIBADI".
+== c. "WEB-PRIBADI/" -- situs GitHub page pribadi 
+== == https://akunGitHub.github.io/os201/.
+
+3. "BERSAMA" -- Proyek OS201 bersama, yaitu 
+== == https://github.com/UI-FASILKOM-OS/os201/.
+== a. "UAS-BERSAMA/" -- Folder "UAS/" dalam "BERSAMA".
+== b. "UAS-BERSAMA/.dummy" -- Berkas "UAS/.dummy" dalam "BERSAMA".
+== c. "UAS-KELOMPOK/" -- Folder "UAS-KELOMPOK/" dalam "BERSAMA".
+
+4. PASSPHRASE: pantau "WhatsApp Group".
+
+
+BAGIAN B: INFO TUGAS KELOMPOK
+=============================
+
+1. Pembentukan Kelompok: Senin, 29-Juni-2020 
+
+2. Berkas Tugas:
+== a. 0000-INFO-TUGAS-KELOMPOK.txt (berkas ini).
+== b. 0003-TUGAS.tar.bz2 (berkas tugas).
+
+3. Lokasi Tugas (enkripsi simetrik):
+https://github.com/UI-FASILKOM-OS/SistemOperasi/tree/master/UAS
+
+4. PASSPHRASE: 
+== a. INFO: lihat WhatsApp Group.
+== b. TUGAS: Senin, 29-Juni-2020, jam 21:00.
+
+5. Batas Waktu Pengumpulan (DEADLINE): Selasa, 30-Juni-2020, jam 22:01.
+== a. Harap berhenti PUSH sebelum batas waktu tersebut.
+== b. DEADLINE hanya berlaku untuk ingin melanjutkan ke tahap TUGAS4.
+
+
+BAGIAN C: BERKAS YANG DIKUMPULKAN
+=================================
+
+1. Harap push ke "UAS-PRIBADI/" dengan lengkap:
+===============================================
+== 0000-mypub.txt
+== 0001-mytest.txt
+== 0001-mytest.txt.asc
+== 0002-TUGAS-PAS1.txt
+== 0003-TUGAS.tar.bz2.asc
+== 0004-DONE-BEFORE-DEADLINE.txt.asc
+== 0005-KODE-ETIK.txt.asc
+== SHA1SUM
+== SHA1SUM.asc
+
+
+2. Harap push ke "UAS-BERSAMA/akunGitHub/" dengan lengkap:
+==========================================================
+== 0004-DONE-BEFORE-DEADLINE.txt.asc (identik dengan di atas)
+
+
+3. BERKAS: 0003-TUGAS.tar.bz2.asc
+=================================
+== a. Berkas 0003-TUGAS.tar.bz2.asc dienkripsi dengan kunci simetris.
+== b. Kunci akan diumumkan jam 21:00
+== c. Tugas dikembalikan dalam bentuk tar kompresi bz2, dienkripsi dengan kunci asimetris.
+== d. Contoh enkripsi untuk "cbkadal":
+gpg2 -o 0003-TUGAS.tar.bz2.asc -e -r operatingsystems@vlsm.org -r cbkadal@vlsm.org -a ../OUTSIDE/0003-TUGAS.tar.bz2
+(OUTSIDE/ jangan di PUSH ke GitHub!)
+
+
+3. Hitung "sha1sum" serta masukkan ke berkas "SHA1SUM" dengan lengkap untuk berkas-berkas berikut:
+==================================================================================================
+== 0000-mypub.txt
+== 0001-mytest.txt
+== 0001-mytest.txt.asc
+== 0002-TUGAS-PAS1.txt
+== 0003-TUGAS.tar.bz2.asc
+== 0004-DONE-BEFORE-DEADLINE.txt.asc
+== 0005-KODE-ETIK.txt.asc
+
+
+4. Tanda-Tangan dan Enkripsi Digital (TTD)
+==========================================
+== Nama-nama berkas harus sama dengan di atas.
+== Harap COMMIT sebelum DEADLINE.
+== TERUTAMA: harap PUSH sebelum DEADLINE.
+== 0001-mytest.txt.asc
+gpg2 -o- -e -r operatingsystems@vlsm.org -r cbkadal@vlsm.org -a 0001-mytest.txt | gpg2 -o 0001-mytest.txt.asc --clearsign
+== 0004-DONE-BEFORE-DEADLINE.txt.asc
+gpg2 -o 0004-DONE-BEFORE-DEADLINE.txt.asc --clearsign ../OUTSIDE/0004-DONE-BEFORE-DEADLINE.txt
+(OUTSIDE jangan di PUSH ke GitHub!)
+== 0005-KODE-ETIK.txt.asc
+gpg2 -o 0005-KODE-ETIK.txt.asc --clearsign ../OUTSIDE/0005-KODE-ETIK.txt
+== SETIAP mengubah berkas, harap menghitung kembali SHA1SUM.
+== SETIAP mengubah berkas, harap tanda-tangan ulang (detached, armor) SHA1SUM.asc
+== Yang akan diperiksa ialah berkas yang di GitHub.
+== Pastikan, berkas yang di-push, sama dengan berkas anda di PC!
+== Lakukan verifikasi!
+== Lihat contoh https://github.com/rms46/cbkadal.
+
+
+5. Jangan mengumpulkan berkas lain!
+===================================
+== a. harap membersihkan/menghapus berkas-berkas lama yang tidak diminta.
+== b. Jangan menambahkan/ push folder dan berkas extra YANG TIDAK DIMINTA!
+== c. TERUTAMA, JANGAN MENGUMPULKAN berkas "0003-TUGAS.tar.bz2" tanpa enkripsi.
+
+
+6. Berkas "0000-mypub.txt"
+==========================
+== a. Silakan memiliki lebih dari satu key.
+== b. Namun, berkas "0000-mypub.txt" hanya berisi SATU public key.
+== c. Gunakan key yang ada di "0000-mypub.txt" tersebut.
+== d. Jika bingung/ keliru/ tidak sengaja/ tidak mengerti, dst,
+== == silakan menghapus TOTAL semua key yang ada, dan membuat baru.
+== e. Jika menggunakan antar-muka GitHub berbasis WEB, jangan upload secara COPAS!
+== f. Selalu lakukan verifikasi, apakah KEY tersebut sudah betul atau tidak.
+== g. Jangan mengumpukan SECRET-KEY!
+
+
+7. Berkas "0001-mytest.txt"
+==========================
+== a. Jika mengubah KEY, dengan sendirinya harus mengubah/ revisi isi berkas "0001-mytest.txt" ini.
+
+== b. Perhatian, ada modifikasi PSTAMP, yaitu extra delay 1 detik.
+
+== c. Isi berkas "0001-mytest.txt" kira-kira seperti berikut:
+# ===========================================================
+Script started on 2020-06-29 00:16:54+0700
+$ PS1="$ "
+$ date
+Mon Jun 29 00:17:22 WIB 2020
+$ echo $HOSTNAME
+pamulang1
+$ echo $akunGitHub
+cbkadal
+$ echo $PSTAMP
+TMP1="$(date +%y%m%d-%H%M%S)"; TMP2="$(sleep 1;echo $TMP1-$akunGitHub-${PWD##*/}|sha1sum|cut -c1-4)"; echo "$TMP1-$TMP2-${PWD##*/}/> ";
+$ PS1="\$(eval \$PSTAMP)"
+200629-001722-6957-OUTSIDE/> gpg2 --list-keys
+/home/rms46/.gnupg/pubring.kbx
+------------------------------
+pub   rsa4096 2020-02-13 [SC] [expires: 2021-02-12]
+      B4507B533F7F22840BD8E93ED0F5DBDD67DF6DDE
+uid           [ultimate] Operating Systems (OS) <operatingsystems@vlsm.org>
+sub   rsa4096 2020-02-13 [E] [expires: 2021-02-12]
+
+pub   rsa4096 2020-05-28 [SC] [expires: 2021-05-23]
+      0EFC7183596281364D6CB349420959134762F757
+uid           [ultimate] Cicak Bin Kadal (CBK) <cbkadal@vlsm.org>
+sub   rsa4096 2020-05-28 [E] [expires: 2021-05-23]
+
+200629-001746-3a1a-OUTSIDE/> exit
+exit
+
+Script done on 2020-06-29 00:17:57+0700
+# ===========================================================
+
+
+8. Berkas "0001-mytest.txt.asc"
+==============================
+== Lihat butir 4 diatas
+
+
+9. Berkas "0002-TUGAS-PAS1.txt"
+================================
+== a. Tugas utama ialah memeriksa berkas "0001-mytest.txt".
+   Anda juga diminta memeriksa 2 tetangga langsung (SETELAH anda) yang lolos PAS0.
+   Dalam contoh berikut digunakan user "cbkadal", "dummy1", dan "dummy2".
+   Lihat TETANGGA LANGSUNG berkas "PAS0" di:
+   https://github.com/UI-FASILKOM-OS/SistemOperasi/tree/master/Log/201
+   Cara mendapatkan TETANGGA LANGSUNG tidak perlu dilampirkan.
+== b. Silakan menggunakan variabel "CEKSEBELA?" dari berkas sebelumnya sudah SEQOK dan SUMOK.
+== c. Silakan menggunakan variabel "CEKSAYA" lama, jika menggunakan berkas "0001-mytest.txt" lama.
+== d. Proses pembuatan script ini sama dengan yang sebelumnya:
+# #####################
+PS1="$ "
+echo $akunGitHub
+echo $PSTAMP
+date
+PS1="\$(eval \$PSTAMP)"
+echo -e $CEKSAYA
+echo -e $CEKSEBELA1
+echo -e $CEKSEBELA2
+exit
+# #####################
+== e. Gunakan format "CEKSAYA" baru, jika membuat berkas "0001-mytest.txt" baru.
+cbkadal cbkadal ZCZCSCRIPTSTART 200608-101301 \n
+cbkadal cbkadal 200608-101405-7e74-UAS/ 200608-101405 SEQOK SUMOK 7e747ca7 \n
+cbkadal cbkadal 200608-101417-ee67-UAS/ 200608-101417 SEQOK SUMOK ee67399d \n
+cbkadal cbkadal 200608-101434-b624-UAS/ 200608-101434 SEQOK SUMOK b6240c86 \n
+cbkadal cbkadal 200608-101438-VVVV-UAS/ 200608-101438 SEQOK SUMNO WWWWWWWW \n
+cbkadal cbkadal 200608-000000-XXXX-UAS/ 200608-000000 SEQNO SUMNO YYYYYYYY \n
+cbkadal cbkadal ZCZCSCRIPTSTOP 200608-101447 SEQNO SUMNO \n
+== == BARIS TERAKHIR: SEQNO, jika ada yang SEQNO; SUMN0, jika ada yang SUMNO.
+== f. Jika umpama user "dummy1" memeriksa berkas dari cbkadal, maka isi variable "CEKSEBELA1" dari dummy1 kira kira seperti berikut:
+dummy cbkadal ZCZCSCRIPTSTART 200608-101301 \n
+dummy cbkadal 200608-101405-7e74-UAS/ 200608-101405 SEQOK SUMOK 7e747ca7 \n
+dummy1 cbkadal ...
+
+
+10. Berkas "0003-TUGAS.tar.bz2.asc"
+===================================
+== Lihat butir 4 diatas.
+
+
+11. Berkas "0004-DONE-BEFORE-DEADLINE.txt.asc"
+==============================================
+== Buat berkas kosong dan tinggalkan kosong.
+== Lihat butir 4 diatas.
+
+
+12. Berkas "0005-KODE-ETIK.txt.asc"
+===================================
+== Lihat butir 4 diatas.
+== Sumber berkas: "UAS-BERSAMA/0005-KODE-ETIK.txt".
+
+
+BAGIAN D: REVISI TUGAS
+======================
+== TBA.
+
+
+BAGIAN E: TANYA-JAWAB
+=====================
+1. Gunakan SCELE untuk tanja-jawab UMUM.
+== Pada saat ujian, SCELE akan lebih sering dibaca.
+== Pada saat tidak ujian, biasanya SCELE hanya dibaca beberapa kali seminggu.
+
+2. Gunakan satu thread untuk satu kasus.
+== Penumpukan/ pembajakan thread akan menyulitkan pemantauan tanya-jawab.
+
+3. Gunakan mailto:operatingsystems@vlsm.org untuk komunikasi pribadi. Subjek EMAIL agar ada [HELP].
+
+4. TBA.
+
+
+BAGIAN F: URL
+=============
+
+1. Pelajari Script Berikut ini
+https://scele.cs.ui.ac.id/mod/forum/discuss.php?d=19672
+2. Git/GitHub: Kondisi Balapan Saat COMMIT
+https://rahmatm.samik-ibrahim.vlsm.org/2020/06/gitgithub-kondisi-balapan-saat-commit.html
+3. Lihat contoh CBKADAL
+https://github.com/rms46/cbkadal.
+4. TBA.
+
+
+BAGIAN G: PEMBENTUKAN KELOMPOK
+==============================
+TBA.
+
+
+JT!
+
