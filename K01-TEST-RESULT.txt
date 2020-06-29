@@ -1,0 +1,84 @@
+Script started on 2020-06-28 17:36:45+0700
+$ PS1="$ "
+$ date
+Sun Jun 28 17:36:55 WIB 2020
+$ echo $HOSTNAME
+pamulang1
+$ echo $akunGitHub
+cbkadal
+$ echo $PSTAMP
+TMP1="$(date +%y%m%d-%H%M%S)"; TMP2="$(sleep 1;echo $TMP1-$akunGitHub-${PWD##*/}|sha1sum|cut -c1-4)"; echo "$TMP1-$TMP2-${PWD##*/}/> ";
+$ PS1="\$(eval \$PSTAMP)"
+200628-173655-0be4-.P3/> make clean
+rm -f p00 p03 p04 p01 p02 SharedMemoryFile.bin .dummy
+200628-173656-2544-.P3/> ./p00
+bash: ./p00: No such file or directory
+200628-173657-565e-.P3/> make
+gcc -std=gnu11 -pthread    p00.c share.c share.h   -o p00
+gcc -std=gnu11 -pthread    p03.c share.c share.h   -o p03
+gcc -std=gnu11 -pthread    p04.c share.c share.h   -o p04
+gcc -std=gnu11 -pthread    p01.c share.c share.h   -o p01
+gcc -std=gnu11 -pthread    p02.c share.c share.h   -o p02
+200628-173658-e1d7-.P3/> ./p01
+akunGH1[START PID[5228] PPID[5089]]
+No "SharedMemoryFile.bin" file.
+200628-173701-51be-.P3/> ./p00
+akunGH0[START PID[5237] PPID[5089]]
+akunGH1[START PID[5238] PPID[5237]]
+akunGH3[START PID[5240] PPID[5237]]
+akunGH2[START PID[5239] PPID[5237]]
+akunGH4[START PID[5241] PPID[5237]]
+akunGH2[progs[00] TIME[03] MUTEX[02] MMAP[OPEN] [][]]
+akunGH2[progs[00] TIME[06] MUTEX[04] MMAP[OPEN] [akunGH2][][]]
+akunGH0[progs[01] TIME[07] MUTEX[02] MMAP[OPEN] [akunGH2][][]]
+akunGH1[progs[02] TIME[08] MUTEX[02] MMAP[OPEN] [akunGH2][][]]
+akunGH2[BYEBYE =====  ===== =====]
+akunGH1[progs[02] TIME[14] MUTEX[04] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][][]]
+akunGH0[progs[01] TIME[15] MUTEX[04] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][][]]
+akunGH4[progs[03] TIME[16] MUTEX[02] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][][]]
+akunGH1[BYEBYE =====  ===== =====]
+akunGH3[progs[04] TIME[19] MUTEX[02] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][][]]
+akunGH4[progs[03] TIME[22] MUTEX[04] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][akunGH4][akunGH3]]
+akunGH4[BYEBYE =====  ===== =====]
+akunGH3[progs[04] TIME[24] MUTEX[04] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][akunGH4][akunGH3]]
+akunGH3[BYEBYE =====  ===== =====]
+akunGH0[BYEBYE =====  ===== =====]
+200628-173732-c848-.P3/> ./p01
+akunGH1[START PID[5268] PPID[5089]]
+ShareMemory is NOT OPEN, BYE BYE ==== ====
+200628-173735-c835-.P3/> ./p00 x
+akunGH0[START PID[5277] PPID[5089]]
+ShareMemory is OPEN, BYE BYE ==== ====
+200628-173736-f0e9-.P3/> ./p01
+akunGH1[START PID[5287] PPID[5089]]
+akunGH1[progs[02] TIME[27] MUTEX[07] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][akunGH4][akunGH3]]
+akunGH1[progs[02] TIME[29] MUTEX[09] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][akunGH4][akunGH3]]
+akunGH1[BYEBYE =====  ===== =====]
+200628-173749-1fd9-.P3/> ./p00
+akunGH0[START PID[5296] PPID[5089]]
+akunGH2[START PID[5298] PPID[5296]]
+akunGH3[START PID[5299] PPID[5296]]
+akunGH1[START PID[5297] PPID[5296]]
+akunGH4[START PID[5300] PPID[5296]]
+akunGH2[progs[00] TIME[33] MUTEX[07] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][akunGH4][akunGH3]]
+akunGH2[progs[00] TIME[36] MUTEX[09] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][akunGH4][akunGH3]]
+akunGH0[progs[01] TIME[37] MUTEX[07] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][akunGH4][akunGH3]]
+akunGH1[progs[02] TIME[38] MUTEX[12] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][akunGH4][akunGH3]]
+akunGH2[BYEBYE =====  ===== =====]
+akunGH1[progs[02] TIME[44] MUTEX[14] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][akunGH4][akunGH3]]
+akunGH0[progs[01] TIME[45] MUTEX[09] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][akunGH4][akunGH3]]
+akunGH4[progs[03] TIME[46] MUTEX[07] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][akunGH4][akunGH3]]
+akunGH1[BYEBYE =====  ===== =====]
+akunGH3[progs[04] TIME[49] MUTEX[07] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][akunGH4][akunGH3]]
+akunGH4[progs[03] TIME[52] MUTEX[09] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][akunGH4][akunGH3]]
+akunGH4[BYEBYE =====  ===== =====]
+akunGH3[progs[04] TIME[54] MUTEX[09] MMAP[OPEN] [akunGH2][akunGH0][akunGH1][akunGH4][akunGH3]]
+akunGH3[BYEBYE =====  ===== =====]
+akunGH0[BYEBYE =====  ===== =====]
+200628-173820-9f04-.P3/> ./p01
+akunGH1[START PID[5315] PPID[5089]]
+ShareMemory is NOT OPEN, BYE BYE ==== ====
+200628-173838-f89f-.P3/> exit
+exit
+Script done on 2020-06-28 17:38:40+0700
+
