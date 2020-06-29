@@ -120,7 +120,7 @@ void checkOpen(void) {
 // Tue Jun  9 17:46:47 WIB 2020
 void myWait(int boss, int entry) {
     if (boss == BOSS) {
-	wait(NULL);
+	while(wait(NULL) > 0);
 	mymap->state = CLOSED;
     }
 }
@@ -133,6 +133,14 @@ int main(int argc, char* argv[]) {
     myPrint(akunGitHub, tmpStr);
     init(boss, argc, argv);
     checkOpen();
+    if (boss == BOSS) {
+        for(int temp=0;temp<sizeof(progs) / sizeof(progs[0]);temp++) {
+            if(fork() == 0) {
+                execl(progs[temp], NULL);
+                break;
+            }
+        }
+    }
     sleep  (delay);
     int entry = getEntry(akunGitHub);
     sleep  (delay);

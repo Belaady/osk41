@@ -9,6 +9,9 @@
 #define P02 "./p02"
 #define P03 "./p03"
 #define P04 "./p04"
+#define P05 "./p05"
+#define P06 "./p06"
+#define P07 "./p07"
 
 #include <fcntl.h>
 #include <semaphore.h>
